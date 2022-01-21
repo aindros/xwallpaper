@@ -14,6 +14,9 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef __FUNCTIONS_H__
+#define __FUNCTIONS_H__
+
 #include <xcb/xcb.h>
 
 #include <sys/types.h>
@@ -100,3 +103,6 @@ wp_config_t	*parse_config(char **);
 void		 stage1_sandbox(void);
 void		 stage2_sandbox(void);
 void		*xmalloc(size_t);
+
+
+#endif
