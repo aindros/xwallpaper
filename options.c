@@ -170,7 +170,12 @@ parse_box(char *s, wp_box_t **box)
 	    b.width == 0 || b.height == 0)
 		return 1;
 
-	*box = xmalloc(sizeof(*box));
+	*box = malloc(sizeof(*box));
+	if (box == NULL) {
+		fprintf(stderr, "Error with malloc()\n");
+		exit(-1);
+	}
+
 	memcpy(*box, &b, sizeof(b));
 
 	return 0;
@@ -182,7 +187,12 @@ parse_config(char **argv)
 	wp_config_t *config;
 	wp_option_t last;
 
-	config = xmalloc(sizeof(*config));
+	config = malloc(sizeof(*config));
+	if (config == NULL) {
+		fprintf(stderr, "Error with malloc()\n");
+		exit(-1);
+	}
+
 	config->options = NULL;
 	config->count = 0;
 	config->daemon = 0;
