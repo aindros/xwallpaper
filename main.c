@@ -732,7 +732,7 @@ process_event(wp_config_t *config, xcb_connection_t *c,
 int
 main(int argc, char *argv[])
 {
-	wp_config_t *config;
+	wp_config_t *config = NULL;
 	xcb_connection_t *c;
 #ifdef WITH_RANDR
 	xcb_connection_t *c2;
